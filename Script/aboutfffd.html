@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="stylessss.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if the user is logged in
+            const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+            console.log('User logged in:', isLoggedIn); // Debugging: Check login status
+        
+            // Get the current page URL
+            const currentPage = window.location.pathname;
+            console.log('Current page:', currentPage); // Debugging: Check current page path
+        
+            // List of pages that require login
+            const restrictedPages = [
+                '/aboutfffd.html',
+                '/savereview.html',
+                '/branding.html',
+                '/testimonial.html',
+                '/content.html',
+                '/website.html',
+                '/contactus.html',
+                '/userreview.html'
+            ];
+        
+            // Redirect to login page if user is not logged in and trying to access a restricted page
+            if (!isLoggedIn && restrictedPages.includes(currentPage)) {
+                console.log('Redirecting to login page');
+                window.location.href = 'extra.html'; // Redirect to login page
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome, [Username]</h1>
+            <nav>
+                <a href="#profile">Profile</a>
+                <a href="#settings">Settings</a>
+                <a href="#logout" id="logout">Logout</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="overview">
+                <h2>Overview</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Total Sales</h3>
+                        <p>$45,000</p>
+                    </div>
+                    <div class="card">
+                        <h3>New Users</h3>
+                        <p>320</p>
+                    </div>
+                    <div class="card">
+                        <h3>Pending Orders</h3>
+                        <p>58</p>
+                    </div>
+                </div>
+            </section>
+            <section class="recent-activities">
+                <h2>Recent Activities</h2>
+                <ul>
+                    <li>Order #12345 processed.</li>
+                    <li>User John Doe updated profile.</li>
+                    <li>New product added to inventory.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
+    <script >
+        // Logout functionality
+document.getElementById('logout').addEventListener('click', function() {
+    // Clear user session data
+    // Redirect to login page
+    window.location.href = 'extra.html';
+});
+
+    </script>
+</body>
+</html>

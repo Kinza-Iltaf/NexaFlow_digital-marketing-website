@@ -1,0 +1,244 @@
+.hero-video {
+    position: relative;
+    width: 85%;
+    height: 70vh; /* Adjust the height as needed */
+    overflow: hidden;
+    border: 5px solid #ad1c71;
+    margin-top: 80px;
+    margin-left: 70px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+}
+
+.hero-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+.hero-video video::-webkit-media-controls {
+    opacity: 0.8; /* Make the controls slightly transparent */
+}
+
+.hero-video video:hover::-webkit-media-controls {
+    opacity: 1; /* Make the controls fully opaque on hover */
+}
+
+
+/* Our Story Section */
+/* .our-story {
+    
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 20px;
+    left: 20px;
+    color: white;
+  margin: 10px; 
+    
+
+} */
+.our-story h2{
+    color: white;
+    font-size: 30px;
+ align-items: center;
+ justify-content: center;
+ display: flex;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 10px;
+
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.timeline-event {
+    background-color:#404b51;
+    border-radius: 8px;
+    padding: 10px;
+    width: 250px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    color: white;
+}
+
+.timeline-event span {
+    font-size: 1.4em;
+    color: white;
+    display: block;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Services Section */
+.services {
+    margin: 20px;
+    padding: 50px 20px;
+    text-align: center;
+     /* Optional: Add a background color for better contrast */
+}
+
+.services h2 {
+    margin-bottom: 40px;
+    font-size: 2em;
+    color:white;
+    text-decoration: underline;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 10px;
+}
+
+.service-cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds space between cards */
+}
+
+.service-card {
+    background-color: #404b51;
+    border-radius: 8px;
+    padding: 20px;
+    color: white;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+    flex: 1; /* Ensures cards grow/shrink as needed */
+    max-width: 100%; /* Prevents cards from being too wide on small screens */
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+
+/* Team Section */
+/* Team Section */
+/* .team {
+  
+    padding: 60px 20px;
+    text-align: center;
+} */
+
+
+
+.team-members {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px; /* Adds space between team members */
+    color: white;
+}
+
+.team-member {
+    background-color:#404b51;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 1; /* Ensures team members adjust their size responsively */
+    max-width: calc(33% - 20px); /* Ensures three items per row with spacing */
+   
+}
+.team-member h3, p{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+.team-member img {
+    width: 100%;
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+
+/* Core Values Section */
+.values {
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+}
+.values h2{
+    text-decoration: underline;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    text-underline-offset: 10px;
+    font-size: 30px;
+}
+
+.values-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.value {
+    background-color:#404b51;
+    border-radius: 8px;
+    padding: 20px;
+    width: 250px;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.value i {
+    font-size: 2em;
+    color: yellow;
+    margin-bottom: 15px;
+}
+
+
+/* CTA Section */
+.cta {
+    background-color:#ad1c71;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.cta-button {
+    background-color: #fff;
+    color: black;
+    padding: 5px 30px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+    display: inline-block; /* Ensure the button is treated as an inline block element */
+    margin-top: 10px; /* Adjust this value to move the button down */
+    /* Or use transform if margin-top doesn't work */
+    /* transform: translateY(10px); */
+}
+
+
+
+.cta-button:hover {
+    background-color: #f4f4f4;
+    text-decoration: underline;
+    
+}

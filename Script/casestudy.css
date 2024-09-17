@@ -1,0 +1,242 @@
+html {
+    scroll-behavior: smooth;
+}
+
+
+#branding-intro {
+    position: relative;
+    width: 100%;
+    background-image: url(/img/case\ study.jpg); 
+    /* Add your background image */
+    /* background-color: #AD1C71; */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 220px 20px;
+    box-sizing: border-box;
+    z-index: 9;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    margin-bottom: -53px;
+    
+    
+    }
+
+    #branding-intro::before {
+        content: "";
+        position: absolute;
+        top: 125px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: inherit; /* Inherit the background image */
+        background-size: inherit;
+        background-position: inherit;
+        filter: blur(1px); /* Apply blur effect */
+        z-index: -1; /* Keep the blurred image behind the text */
+        }
+        
+        #branding-intro h1 {
+        font-size: 30px;
+        position: relative; /* Keep text above the blur */
+        z-index: 1;
+        font-weight: bolder;
+        color: #CCE6EA;
+        }
+        
+        #branding-intro p {
+        font-size: 20px;
+        margin-left: 40px;
+        margin-right: 40px;
+        position: relative; /* Keep text above the blur */
+        z-index: 1;
+        color: #cbe8ed;
+        }
+    
+    @keyframes slideUp {
+        0% {
+            bottom: -100%;
+            opacity: 0;
+        }
+        100% {
+            bottom: 10%;
+            opacity: 1;
+        }
+    }
+   
+    /* case study section */
+
+    .case-study-section {
+        text-align: center;
+        padding: 50px;
+    }
+    
+    .case-study-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-top: 10px;
+
+        
+    }
+    
+    .case-study-box {
+        width: 300px;
+        text-decoration: none;
+        color: #333;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color:  #AD1c71;
+      
+    }
+    
+    .case-study-box img {
+      
+        width: 100%;
+        height: 200px; /* Fixed height for uniformity */
+        object-fit: cover; /* Ensures the image covers the area without distortion */
+        display: block;
+    }
+    
+    .case-study-info {
+        padding: 20px;
+        background-color: #AD1c71;
+        text-align: center;
+    }
+    
+    .case-study-info h3 {
+        margin: 0;
+        font-size: 22px;
+        color: white;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .case-study-info p {
+        margin: 10px 0 0;
+        font-size: 16px;
+        color:white;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .case-study-box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        border: 5px solid #AD1c71;
+    }
+
+
+
+
+
+    /* case study of branding */
+
+    .case-studies {
+        width: 95%;
+        margin: 0 auto;
+        text-align: center;
+        margin-top: 90px;
+        margin-bottom: 90px;
+
+      
+    }
+    
+    .case-studies-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+        
+    }
+    
+    .case-study {
+        flex: 1;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: rgba(58, 66, 72, 0.95);
+    }
+    
+    .case-study img {
+        width: 100%;
+        height: 200px; /* Set a fixed height */
+        object-fit: cover; /* Ensure the image covers the area */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .case-study:hover img {
+        transform: scale(1.05); /* Slightly zoom in the image */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Add a deeper shadow */
+    }
+    
+    .case-content {
+        padding: 20px;
+        flex-grow: 1;
+    }
+    
+    .case-content h3 {
+        font-size: 22px;
+        margin-bottom: 10px;
+        background-color: #AD1C71;
+        padding: 8px;
+        color: white;
+    }
+    
+    .case-content .summary {
+        font-size: 13px;
+        color: white;
+    }
+    
+    .case-content .full-content {
+        display: none;
+        font-size: 16px;
+        color:white;
+        margin-top: 10px;
+    }
+    
+    .read-more {
+        background-color: #AD1C71;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-top: 10px;
+    }
+    
+    .read-more:hover {
+        background-color: #8b165b;
+    }
+    
+    .author-info {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background-color:#102B3C;
+        border-top: 1px solid #ddd;
+        
+    }
+    
+    .author-info img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 10px;
+    }
+    
+    .author-info p {
+        font-size: 14px;
+        color: white;
+    }
+    

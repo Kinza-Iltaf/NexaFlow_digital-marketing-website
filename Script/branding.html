@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaFlow</title>
+    <link rel="stylesheet" href="web.css">
+   <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Check if the user is logged in
+        const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+        console.log('User logged in:', isLoggedIn); // Debugging: Check login status
+    
+        // Get the current page URL
+        const currentPage = window.location.pathname;
+        console.log('Current page:', currentPage); // Debugging: Check current page path
+    
+        // List of pages that require login
+        const restrictedPages = [
+            '/aboutfffd.html',
+            '/savereview.html',
+            '/branding.html',
+            '/testimonial.html',
+            '/content.html',
+            '/website.html',
+            '/contactus.html',
+            '/userreview.html'
+        ];
+    
+        // Redirect to login page if user is not logged in and trying to access a restricted page
+        if (!isLoggedIn && restrictedPages.includes(currentPage)) {
+            console.log('Redirecting to login page');
+            window.location.href = 'extra.html'; // Redirect to login page
+        }
+    });
+</script>
+
+ 
+</head>
+<body>
+    <div class="background-wrapper">
+        <img src="/img/saf.jpg" alt="Background Image">
+    </div>
+
+    <div class="nav-container">
+        <div class="logo-container">
+            <span class="nexa">Nexa</span><span class="flow">Flow</span>
+        </div>
+
+        <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#home" id="service-overview">Service Overview</a>
+            <a href="casestudy.html">Case Studies</a>
+            <a href="testimonial.html">Testimonials</a>
+            <a href="aboutus.html">About Us</a>
+            <a id="contactus" href="contactus.html">Contact Us</a>
+
+            <div class="service-popup" id="service-popup">
+                <div class="service-item">
+                    <h2>Branding</h2>
+                    <p>We create strong brands that communicate your value and connect with your target audience.</p>
+                    <a href="branding.html" class="view-more">View More</a>
+                </div>
+                <div class="service-item">
+                    <h2>Website</h2>
+                    <p>Our website designs are visually stunning and highly functional, ensuring your online presence stands out.</p>
+                    <a href="website.html" class="view-more">View More</a>
+                </div>
+                <div class="service-item">
+                    <h2>Content</h2>
+                    <p>Content that engages, informs, and drives conversions. Let us help you tell your story effectively.</p>
+                    <a href="content.html" class="view-more">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="branding-intro">
+        <h1>Welcome to Our Branding Service</h1>
+        <p>We specialize in crafting strong and memorable brands that resonate with your audience. Our approach ensures that your brand not only looks great but also tells a compelling story that connects with your customers.</p>
+    </section>
+
+   <div id="helpheading">
+    <h2>Build Your Brand with Us</h2>
+   </div>
+
+    <section id="help-section" class="help-section">
+        <div class="help-content">
+          
+            <div class="help-text">
+                <!-- <h2>Build Your Brand with Us</h2> -->
+                <p>Creating a strong brand is essential for business success. Our team is here to guide you through every step of the branding process, from strategy to execution. Whether you need a new logo, a refreshed website, or a complete brand overhaul, we have the expertise to make your vision a reality.</p>
+                
+            </div>
+         
+            <div class="help-images">
+                <img src="/img/build your own brand.jpg" alt="Brand Strategy" class="help-image">
+            </div>
+        </div>
+    </section>
+
+   
+    <!-- service that we offer -->
+
+
+    <div id="helpheading">
+        <h2>Our Branding Services</h2>
+        <p> At NEXAFlow, we help companies with the following branding services:</p>
+       </div>
+
+    
+
+          <!-- our services which we provide section -->
+     <section class="web-services-carousel">
+        <button class="web-carousel-button left">&#8249;</button>
+        <div class="web-carousel-track-container">
+            <div class="web-carousel-track">
+                <!-- Services will be added dynamically here -->
+                <div class="web-service-card">
+                    <div class="web-service-icon">💡</div>
+                    <h3 class="web-service-title">Brand Strategy</h3>
+                    <p class="web-service-description">Build a strategic brand through ideation, research, and market analysis that sets you apart from the competition.</p>
+                </div>
+                <div class="web-service-card">
+                    <div class="web-service-icon">🎨</div>
+                    <h3 class="web-service-title">Brand Identity Design</h3>
+                    <p class="web-service-description">Create a powerful and memorable brand identity that differentiates you and leaves a lasting impression.</p>
+                </div>
+                <div class="web-service-card">
+                    <div class="web-service-icon">🔄</div>
+                    <h3 class="web-service-title">Rebranding</h3>
+                    <p class="web-service-description">Realign your brand with your business goals and reconnect with your target audience.</p>
+                </div>
+                <div class="web-service-card">
+                    <div class="web-service-icon">🖨️</div>
+                    <h3 class="web-service-title">Print Design</h3>
+                    <p class="web-service-description">Make a statement and leave a lasting impression with eye-catching print design and materials.</p>
+                </div>
+                <div class="web-service-card">
+                    <div class="web-service-icon">🏛️</div>
+                    <h3 class="web-service-title">Exhibition Design</h3>
+                    <p class="web-service-description">Captivate your audience and elevate your brand presence with impactful exhibition design.</p>
+                </div>
+                <div class="web-service-card">
+                    <div class="web-service-icon">🎥</div>
+                    <h3 class="web-service-title">Animated Videos</h3>
+                    <p class="web-service-description">Bring your brand to life and engage your audience with compelling and memorable videos.</p>
+                </div>
+            </div>
+        </div>
+        <button class="web-carousel-button right">&#8250;</button>
+    </section>
+
+
+    <div id="helpheading">
+        <h2>Our Projects</h2>
+        <p> Discover the work we've done for our clients, turning their ideas into reality.</p>
+       </div>
+      
+
+       <!-- our recent project related to web -->
+
+       <section class="portfolio-section">
+
+        <div class="masonry-grid">
+            <div class="project-card">
+                <a href="">
+                <img src="/img/mainbranding.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+            <div class="project-card">
+                <a href="">
+                <img src="/img/mainbranding.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+    
+            <div class="project-card">
+                <a href="">
+                <img src="/img/mainbranding.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+    
+            <div class="project-card">
+                <a href="">
+                <img src="/img/mainbranding.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+    
+            <div class="project-card">
+                <a href="">
+                <img src="/img/mainbranding.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+    
+            <div class="project-card">
+                <a href="">
+                <img src="/img/mainbranding.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+            <div class="project-card">
+                <a href="">
+                <img src="/img/mainbranding.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+    
+            <div class="project-card">
+                <a href="">
+                <img src="/img/mainbranding.jpg" alt="Project 1">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+    
+            <!-- Repeat for other projects -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h2>Get in Touch</h2>
+                <ul class="contact-info">
+                    <li><img id="icon" src="/img/location.gif" alt="location"> ABC street 123 Road, Lahore</li>
+                    <li><img id="icon" width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/gmail.png"  style="background-color: white;" alt="gmail"/></i> info@khasstores.com</li>
+              <li><img id="icon" width="48" height="48" src="https://img.icons8.com/pulsar-line/48/ringer-volume.png"  style="background-color: white;" alt="ringer-volume"/></i> (+92) 304 111 0031</li>
+          </ul>
+                <ul class="footer-social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Our Expertise</h2>
+                <p>Leading in SEO, social media marketing, and content creation to elevate your brand online.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Why Choose Us?</h2>
+                <ul>
+                    <li>Data-driven strategies</li>
+                    <li>Customized campaigns</li>
+                    <li>Proven results</li>
+                    <li>Expert team</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="Contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Sign up and stay ahead</h2>
+                <p>Subscribe for the latest insights and tips in digital marketing.</p>
+                <div class="subscribe">
+                    <input type="email" placeholder="Your email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+
+
+    <script src="script.js"></script>
+
+
+
+</body>
+</html>
