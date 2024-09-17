@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaFlow</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        } 
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+          
+           
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+        }
+
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+
+ <link rel="stylesheet" href="testimonial.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
+</head>
+<body>
+    <div class="background-wrapper">
+        <img src="/img/saf.jpg" alt="Background Image">
+    </div>
+
+    <div class="nav-container">
+        <div class="logo-container">
+            <span class="nexa">Nexa</span><span class="flow">Flow</span>
+        </div>
+
+        <div class="nav-menu">
+            <a href="#home" id="service-overview">Service Overview</a>
+            <a href="casestudy.html">Case Studies</a>
+            <a href="testimonial.html">Testimonials</a>
+            <a href="#contact">About Us</a>
+            <a id="contactus" href="#contact">Contact Us</a>
+
+            <div class="service-popup" id="service-popup">
+                <div class="service-item">
+                    <h2>Branding</h2>
+                    <p>We create strong brands that communicate your value and connect with your target audience.</p>
+                    <a href="branding.html" class="view-more">View More</a>
+                </div>
+                <div class="service-item">
+                    <h2>Website</h2>
+                    <p>Our website designs are visually stunning and highly functional, ensuring your online presence stands out.</p>
+                    <a href="website.html" class="view-more">View More</a>
+                </div>
+                <div class="service-item">
+                    <h2>Content</h2>
+                    <p>Content that engages, informs, and drives conversions. Let us help you tell your story effectively.</p>
+                    <a href="content.html" class="view-more">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- <div class="container">
+        <h1>Submit Your Review</h1>
+        <form id="reviewForm">
+            <label for="username">Name:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="reviewText">Your Review:</label>
+            <textarea id="reviewText" name="reviewText" required></textarea>
+
+            <label for="rating">Rating:</label>
+            <select id="rating" name="rating" required>
+                <option value="5">5 - Excellent</option>
+                <option value="4">4 - Very Good</option>
+                <option value="3">3 - Good</option>
+                <option value="2">2 - Fair</option>
+                <option value="1">1 - Poor</option>
+            </select>
+
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>   -->
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h2>Get in Touch</h2>
+                <ul class="contact-info">
+                    <li><img id="icon" src="/img/location.gif" alt="location"> ABC street 123 Road, Lahore</li>
+                    <li><img id="icon" width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/gmail.png"  style="background-color: white;" alt="gmail"/></i> info@khasstores.com</li>
+              <li><img id="icon" width="48" height="48" src="https://img.icons8.com/pulsar-line/48/ringer-volume.png"  style="background-color: white;" alt="ringer-volume"/></i> (+92) 304 111 0031</li>
+          </ul>
+                <ul class="footer-social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Our Expertise</h2>
+                <p>Leading in SEO, social media marketing, and content creation to elevate your brand online.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Why Choose Us?</h2>
+                <ul>
+                    <li>Data-driven strategies</li>
+                    <li>Customized campaigns</li>
+                    <li>Proven results</li>
+                    <li>Expert team</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="Contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Sign up and stay ahead</h2>
+                <p>Subscribe for the latest insights and tips in digital marketing.</p>
+                <div class="subscribe">
+                    <input type="email" placeholder="Your email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="testimonial.js"></script>
+</body>
+</html>

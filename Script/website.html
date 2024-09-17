@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaFlow</title>
+   <link rel="stylesheet" href="web.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Check if the user is logged in
+        const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+        console.log('User logged in:', isLoggedIn); // Debugging: Check login status
+    
+        // Get the current page URL
+        const currentPage = window.location.pathname;
+        console.log('Current page:', currentPage); // Debugging: Check current page path
+    
+        // List of pages that require login
+        const restrictedPages = [
+            '/aboutfffd.html',
+            '/savereview.html',
+            '/branding.html',
+            '/testimonial.html',
+            '/content.html',
+            '/website.html',
+            '/contactus.html',
+            '/userreview.html'
+        ];
+    
+        // Redirect to login page if user is not logged in and trying to access a restricted page
+        if (!isLoggedIn && restrictedPages.includes(currentPage)) {
+            console.log('Redirecting to login page');
+            window.location.href = 'extra.html'; // Redirect to login page
+        }
+    });
+</script>
+</head>
+<body>
+    <div class="background-wrapper">
+        <img src="/img/saf.jpg" alt="Background Image">
+    </div>
+
+    <div class="nav-container">
+        <div class="logo-container">
+            <span class="nexa">Nexa</span><span class="flow">Flow</span>
+        </div>
+
+        <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#home" id="service-overview">Service Overview</a>
+            <a href="casestudy.html">Case Studies</a>
+            <a href="testimonial.html">Testimonials</a>
+            <a href="aboutus.html">About Us</a>
+            <a id="contactus" href="contactus.html">Contact Us</a>
+
+            <div class="service-popup" id="service-popup">
+                <div class="service-item">
+                    <h2>Branding</h2>
+                    <p>We create strong brands that communicate your value and connect with your target audience.</p>
+                    <a href="branding.html" class="view-more">View More</a>
+                </div>
+                <div class="service-item">
+                    <h2>Website</h2>
+                    <p>Our website designs are visually stunning and highly functional, ensuring your online presence stands out.</p>
+                    <a href="website.html" class="view-more">View More</a>
+                </div>
+                <div class="service-item">
+                    <h2>Content</h2>
+                    <p>Content that engages, informs, and drives conversions. Let us help you tell your story effectively.</p>
+                    <a href="content.html" class="view-more">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
+    <section id="branding-intro">
+        <h1>Web Development Services</h1>
+        <p>At NEXAFLOW we provide top-notch web development services that help businesses succeed online. Our team of experienced developers specializes in creating responsive, user-friendly, and visually appealing websites tailored to meet your specific needs.</p>
+    </section>
+
+    <div id="helpheading">
+        <h2>Unlock Your Brand’s Full Potential</h2>
+        <p> Empowering Your Brand with High-Performance Websites.</p>
+       </div>
+
+    <!-- intro section -->
+
+    <section id="results-section" class="content-section">
+        <div class="text-content">
+            <h2>Building websites that deliver results</h2>
+
+            <ul>
+            <p>A high-performing website is more than just a digital presence; it’s a powerful tool for growth. We make sure your website converts by:</p>
+           
+                <li>Designing an intuitive interface to engage your visitors</li>
+                <li>Ensuring fast load times and streamlining navigation to optimize performance</li>
+                <li>Creating clear calls-to-action that guide visitors towards conversion</li>
+                <li>Your website is often the first interaction people have with your brand.</li>
+            </ul>
+        </div>
+        <div class="image-content">
+            <img src="/img/deliverresult.jpg" alt="Website results" />
+        </div>
+    </section>
+
+    <div id="helpheading">
+        <h2>Partner with the Experts</h2>
+        <p>  Where Creative Innovation Meets Technical Excellence</p>
+       </div>
+    
+    <section id="why-choose-section" class="content-section reverse-layout">
+        <div class="text-content">
+            <h2>Why choose NEXTFLOW for your website project?</h2>
+            <ul>
+            <p>Our approach combines creative innovation with technical expertise to build websites that perform. We achieve this by:</p>
+            
+                <li>Understanding your customer’s journey and creating effective conversion points</li>
+                <li>Using analytics data to drive informed design decisions and optimize performance</li>
+                <li>Utilizing our proven website process, and world-class design, refined through successful projects with international clients</li>
+                <li>With Canny Creative, your website will not only attract visitors but also drive meaningful engagement and conversions.</li>
+            </ul>
+        </div>
+        <div class="image-content">
+            <img src="/img/whyus.jpg" alt="Why choose us" />
+        </div>
+    </section>
+
+    <div id="helpheading">
+        <h2>Our Expertise at Your Service</h2>
+        <p> Explore the diverse range of web solutions we offer to bring your vision to life</p>
+       </div>
+
+     <!-- our services which we provide section -->
+     <section class="web-services-carousel">
+        <button class="web-carousel-button left">&#8249;</button>
+        <div class="web-carousel-track-container">
+            <div class="web-carousel-track">
+                <!-- Services will be added dynamically here -->
+                <div class="web-service-card">
+                    <div class="web-service-icon">🎨</div>
+                    <h3 class="web-service-title">Website Design</h3>
+                    <p class="web-service-description">Design your website with a strategic approach to capture your brand and your audience.</p>
+                </div>
+                <div class="web-service-card">
+                    <div class="web-service-icon">💻</div>
+                    <h3 class="web-service-title">Website Development</h3>
+                    <p class="web-service-description">Build a strong online presence with a website that is fast, secure, and easy to navigate.</p>
+                </div>
+                <div class="web-service-card">
+                    <div class="web-service-icon">🔧</div>
+                    <h3 class="web-service-title">WordPress</h3>
+                    <p class="web-service-description">Maintain and update your website effortlessly with a flexible, user-friendly CMS solution.</p>
+                </div>
+                <div class="web-service-card">
+                    <div class="web-service-icon">🌐</div>
+                    <h3 class="web-service-title">Website Hosting</h3>
+                    <p class="web-service-description">Ensure your website is always up and running with reliable and secure website hosting.</p>
+                </div>
+                <div class="web-service-card">
+                    <div class="web-service-icon">✍️</div>
+                    <h3 class="web-service-title">Website Copy</h3>
+                    <p class="web-service-description">Compel and convert your audience with website copy that speaks to their needs and drives action.</p>
+                </div>
+                <div class="web-service-card">
+                    <div class="web-service-icon">🚀</div>
+                    <h3 class="web-service-title">Website Optimization</h3>
+                    <p class="web-service-description">Identify areas of improvement and implement strategies that drive measurable results.</p>
+                </div>
+            </div>
+        </div>
+        <button class="web-carousel-button right">&#8250;</button>
+    </section>
+
+
+    <div id="helpheading">
+        <h2>Our Projects</h2>
+        <p> Discover the work we've done for our clients, turning their ideas into reality.</p>
+       </div>
+      
+
+       <!-- our recent project related to web -->
+
+       <section class="portfolio-section">
+
+        <div class="masonry-grid">
+            <div class="project-card">
+                <a href="ourprojects.html">
+                <img src="/img/web opt.jpg" alt="website optimization">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+            <div class="project-card">
+                <a href="">
+                <img src="/img/web design.webp" alt="website design">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+    
+            <div class="project-card">
+                <a href="">
+                <img src="/img/web hosting.webp" alt="webhosting">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+    
+            <div class="project-card">
+                <a href="">
+                <img src="/img/copyweb.jpg" alt="copywebsite">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+    
+            <div class="project-card">
+                <a href="">
+                <img src="/img/web-development.jpg" alt="web development">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+    
+            <div class="project-card">
+                <a href="">
+                <img src="/img/wordpress.jpg" alt="wordpress project">
+                <div class="project-info">
+                    <h3>Project Title 1</h3>
+                    <p>Brief description of the project.</p>
+                </div>
+            </a>
+            </div>
+    
+           
+    
+    
+    
+    
+            <!-- Repeat for other projects -->
+        </div>
+    </section>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h2>Get in Touch</h2>
+                <ul class="contact-info">
+                    <li><img id="icon" src="/img/location.gif" alt="location"> ABC street 123 Road, Lahore</li>
+                    <li><img id="icon" width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/gmail.png"  style="background-color: white;" alt="gmail"/></i> info@khasstores.com</li>
+              <li><img id="icon" width="48" height="48" src="https://img.icons8.com/pulsar-line/48/ringer-volume.png"  style="background-color: white;" alt="ringer-volume"/></i> (+92) 304 111 0031</li>
+          </ul>
+                <ul class="footer-social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Our Expertise</h2>
+                <p>Leading in SEO, social media marketing, and content creation to elevate your brand online.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Why Choose Us?</h2>
+                <ul>
+                    <li>Data-driven strategies</li>
+                    <li>Customized campaigns</li>
+                    <li>Proven results</li>
+                    <li>Expert team</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="Contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Sign up and stay ahead</h2>
+                <p>Subscribe for the latest insights and tips in digital marketing.</p>
+                <div class="subscribe">
+                    <input type="email" placeholder="Your email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    
+
+
+    <script src="webdev.js"></script>
+    <script src="script.js"></script>
+
+
+
+</body>
+</html>

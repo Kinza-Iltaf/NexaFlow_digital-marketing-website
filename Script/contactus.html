@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaFlow</title>
+    <link rel="stylesheet" href="web.css">
+   <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="contact.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+   <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Check if the user is logged in
+        const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+        console.log('User logged in:', isLoggedIn); // Debugging: Check login status
+    
+        // Get the current page URL
+        const currentPage = window.location.pathname;
+        console.log('Current page:', currentPage); // Debugging: Check current page path
+    
+        // List of pages that require login
+        const restrictedPages = [
+            '/aboutfffd.html',
+            '/savereview.html',
+            '/branding.html',
+            '/testimonial.html',
+            '/content.html',
+            '/website.html',
+            '/contactus.html',
+            '/userreview.html'
+        ];
+    
+        // Redirect to login page if user is not logged in and trying to access a restricted page
+        if (!isLoggedIn && restrictedPages.includes(currentPage)) {
+            console.log('Redirecting to login page');
+            window.location.href = 'extra.html'; // Redirect to login page
+        }
+    });
+</script>
+
+</head>
+<body>
+
+    <!-- background image -->
+    <div class="background-wrapper">
+        <img src="/img/saf.jpg" alt="Background Image">
+    </div>
+
+    <!-- navigation bar -->
+    <div class="nav-container">
+        <div class="logo-container">
+            <span class="nexa">Nexa</span><span class="flow">Flow</span>
+        </div>
+
+        <div class="nav-menu">
+            <a href="#home" id="service-overview">Service Overview</a>
+            <a href="casestudy.html">Case Studies</a>
+            <a href="testimonial.html">Testimonials</a>
+            <a href="aboutus.html">About Us</a>
+            <a id="contactus" href="contactus.html">Contact Us</a>
+
+            <div class="service-popup" id="service-popup">
+                <div class="service-item">
+                    <h2>Branding</h2>
+                    <p>We create strong brands that communicate your value and connect with your target audience.</p>
+                    <a href="branding.html" class="view-more">View More</a>
+                </div>
+                <div class="service-item">
+                    <h2>Website</h2>
+                    <p>Our website designs are visually stunning and highly functional, ensuring your online presence stands out.</p>
+                    <a href="website.html" class="view-more">View More</a>
+                </div>
+                <div class="service-item">
+                    <h2>Content</h2>
+                    <p>Content that engages, informs, and drives conversions. Let us help you tell your story effectively.</p>
+                    <a href="content.html" class="view-more">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+     <!-- Contact Us Section -->
+     <div id="helpheading">
+        <h2>Contact Us</h2>
+        <p> We'd love to hear from you! Whether you have a question, feedback, or just want to say hello.</p>
+       </div>
+       <section class="contact-us">
+        <div class="offices-section">
+            <h2>Our Offices</h2>
+            <div class="office-locations">
+                <div class="office">
+                    <img src="https://img.icons8.com/?size=100&id=7880&format=png&color=FFFFFF" alt="Location Icon" class="location-icon">
+                    <div class="office-details">
+                        <h3>USA</h3>
+                        <h6>Oakland, California</h6>
+                        <p>99designs by Vista</p>
+                        <p>PO Box 3330</p>
+                        <p>Oakland, CA 94609</p>
+                    </div>
+                </div>
+                <div class="vertical-line"></div>
+                <div class="office">
+                    <img src="https://img.icons8.com/?size=100&id=7880&format=png&color=FFFFFF" alt="Location Icon" class="location-icon">
+                    <div class="office-details">
+                        <h3>Australia</h3>
+                        <h6>Melbourne, Victoria</h6>
+                        <p>99designs by Vista</p>
+                        <p>41-43 Stewart Street, Level 2</p>
+                        <p>Richmond, VIC 3121</p>
+                    </div>
+                </div>
+                <div class="vertical-line"></div>
+                <div class="office">
+                    <img src="https://img.icons8.com/?size=100&id=7880&format=png&color=FFFFFF" alt="Location Icon" class="location-icon">
+                    <div class="office-details">
+                        <h3>Germany</h3>
+                        <h6>Berlin</h6>
+                        <p>99designs by Vista GmbH</p>
+                        <p>Salzufer 6</p>
+                        <p>10587 Berlin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- map section -->
+
+    <div id="helpheadingg">
+        <h2>Find Us on the Map</h2>
+       </div>
+    <div class="map-section">
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345094255!2d144.9559253156321!3d-37.81720987975195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577ac5fdb29d4f5!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1592471394588!5m2!1sen!2sau"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0">
+            </iframe>
+        </div>
+    </div>
+
+<!-- contact form -->
+<div id="helpheadinggg">
+    <h2>Reach Out to Us</h2>
+   </div>
+    <div class="contact-form-section">
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </div>
+</section>
+
+    
+
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <h2>Get in Touch</h2>
+                <ul class="contact-info">
+                    <li><img id="icon" src="/img/location.gif" alt="location"> ABC street 123 Road, Lahore</li>
+                    <li><img id="icon" width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/gmail.png"  style="background-color: white;" alt="gmail"/></i> info@khasstores.com</li>
+              <li><img id="icon" width="48" height="48" src="https://img.icons8.com/pulsar-line/48/ringer-volume.png"  style="background-color: white;" alt="ringer-volume"/></i> (+92) 304 111 0031</li>
+          </ul>
+                <ul class="footer-social-icons">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"><i class="fab fa-tiktok"></i></a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Our Expertise</h2>
+                <p>Leading in SEO, social media marketing, and content creation to elevate your brand online.</p>
+            </div>
+            <div class="footer-column">
+                <h2>Why Choose Us?</h2>
+                <ul>
+                    <li>Data-driven strategies</li>
+                    <li>Customized campaigns</li>
+                    <li>Proven results</li>
+                    <li>Expert team</li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="Contact-us.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h2>Sign up and stay ahead</h2>
+                <p>Subscribe for the latest insights and tips in digital marketing.</p>
+                <div class="subscribe">
+                    <input type="email" placeholder="Your email address">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

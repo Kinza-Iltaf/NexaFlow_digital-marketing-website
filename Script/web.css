@@ -1,0 +1,985 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    overflow: auto;
+}
+
+.background-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.background-wrapper img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+.nav-container {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #411B44;
+    background: #102B3C;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-container span {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.logo-container .nexa {
+    color: #AD1C71;
+}
+
+.logo-container .flow {
+    color: white;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav-menu a {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fffcff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+    line-height: 1.5;
+    padding: 10px 0;
+    white-space: nowrap;
+}
+
+.nav-menu a:hover {
+    color: #AD1C71;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .logo-container span {
+        font-size: 18px;
+    }
+
+    .nav-menu a {
+        font-size: 16px;
+        padding: 8px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .nav-menu a {
+        font-size: 14px;
+        padding: 6px 0;
+    }
+}
+
+.logo-container span {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-container span:hover {
+    transform: scale(1.3);
+}
+
+.logo-container span::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px;
+    background: #AD1C71;
+}
+
+.logo-container span::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #AD1C71;
+}
+
+.profile-pic {
+    top: 100px;
+    left: 40px;
+    width: 370px;
+    height: 370px;
+    border-radius: 35%;
+    object-fit: cover;
+    position: absolute;
+}
+
+#contactus {
+    border: 2px solid #AD1C71;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.service-popup {
+    display: none;
+    position: fixed;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(58, 66, 72, 0.95);
+    color: white;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.service-item {
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.service-item h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.service-item p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.service-popup .view-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #AD1C71;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.service-popup .view-more:hover {
+    color: #fff;
+}
+
+#service-overview:hover + .service-popup,
+.service-popup:hover {
+    display: flex;
+}
+#service-popup {
+display: none; /* Hide the popup initially */
+}
+
+#branding-intro {
+position: relative;
+width: 100%;
+background-image: url(/img/webservice.jpg); 
+/* Add your background image */
+/* background-color: #AD1C71; */
+background-size: cover;
+background-position: center;
+color: white;
+text-align: center;
+padding: 220px 20px;
+box-sizing: border-box;
+z-index: 9;
+overflow: hidden; /* Ensure content doesn't overflow */
+margin-bottom: -53px;
+}
+
+#branding-intro {
+    position: relative;
+    width: 100%;
+    background-image: url(/img/webservice.jpg); 
+    /* Add your background image */
+    /* background-color: #AD1C71; */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 220px 20px;
+    box-sizing: border-box;
+    z-index: 9;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    margin-bottom: -53px;
+    }
+    
+    #branding-intro::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit; /* Inherit the background image */
+    background-size: inherit;
+    background-position: inherit;
+    filter: blur(1px); /* Apply blur effect */
+    z-index: -1; /* Keep the blurred image behind the text */
+    }
+    
+    #branding-intro h1 {
+    font-size: 30px;
+    position: relative; /* Keep text above the blur */
+    z-index: 1;
+    }
+    
+    #branding-intro p {
+    font-size: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    position: relative; /* Keep text above the blur */
+    z-index: 1;
+    }
+
+@keyframes slideUp {
+    0% {
+        bottom: -100%;
+        opacity: 0;
+    }
+    100% {
+        bottom: 10%;
+        opacity: 1;
+    }
+}
+
+
+/* build your own brand style */
+
+#help-section {
+padding: 10px 10px;
+box-sizing: border-box;
+}
+
+#helpheading{
+    background-color: #AD1C71;
+}
+
+#helpheading p{
+    color: #f8f6f7;
+align-items: center;
+display: flex;
+justify-content: center;
+font-size: 20px;
+margin-top: -39px;
+padding-bottom: 20px;
+
+
+}
+#helpheading h2 {
+margin-top: 6px;
+font-size: 30px;
+color: #f8f6f7;
+align-items: center;
+display: flex;
+justify-content: center;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+font-weight: bolder;
+/* text-decoration: underline; */
+background-color: #AD1C71;
+padding: 20px;
+/* margin-bottom: 45px; */
+}
+
+.help-content {
+display: flex;
+align-items: flex-start;
+justify-content: space-between;
+/* gap: 20px; */
+}
+
+.help-text {
+flex: 1; 
+max-width: 40%; /* Limit text width to 40% of the container */
+background-color: #364955; /* Background color for the text section */
+height: 260px; /* Set a fixed height for the text section */
+margin-left: 40px; /* Add space to the left of the text section */
+padding: 30px; /* Padding inside the text section */
+display: flex; /* Use flexbox for layout */
+align-items: center; /* Center items vertically */
+justify-content: center; /* Center items horizontally */
+}
+
+/* Styling for the paragraph inside help-text */
+.help-text p {
+font-size: 20px; /* Set font size for the paragraph */
+color: #fbf9f9; /* Light text color */
+line-height: 1.5; /* Increase line height for better readability */
+text-align: center; /* Center align text within the paragraph */
+margin: 0; /* Remove default margin from the paragraph */
+}
+
+
+.help-images {
+flex: 1;
+/* max-width: 50%; */
+/* height: 300px; */
+/* display: flex; */
+/* flex-direction: column; */
+/* gap: 20px;  */
+margin-right: 20px;
+margin-left: 100px;
+
+}
+
+.help-image {
+width: 100%; 
+height: 310px; 
+border-radius: 10px;
+transition: opacity 0.3s ease-in-out;
+} 
+
+
+
+/* our services section style */
+
+.services-container {
+    position: relative;
+    width: 600px;
+    margin: 50px auto; 
+   
+  
+}
+
+.service-description {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    background-color: #364955;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: white;
+    font-size: 20px;
+  
+}
+.service-description:hover{
+    background-color: #AD1C71;
+    color: white;
+}
+
+.service-nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.nav-btn {
+    /*
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+    padding: 30px; */
+    background-color: #AD1C71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 0 10px;
+
+
+}
+
+.nav-btn:hover {
+    background-color: #364955;
+}
+
+
+.unique-services-heading {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.unique-services-container {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.unique-services-wrapper {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    width: 100%;
+}
+
+.unique-services {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.unique-service-item {
+    display: block;
+    padding: 0 50px; /* Increase padding as needed */
+    text-align: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    flex: 0 0 auto;
+}
+
+
+
+.unique-service-item img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+   
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+   
+}
+
+.unique-service-item.active img {
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px  #633b52;
+    border: 5px solid #AD1C71;
+   
+
+}
+
+.unique-service-description {
+    margin-top: 20px;
+    font-size: 16px;
+    color: white;
+    max-width: 200px;
+    text-align: center;
+    background-color: #364955;
+    text-decoration: none; /* Ensure no underline */
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.unique-service-description:hover {
+    background-color: #AD1c71;
+
+}
+
+
+
+
+.unique-service-link {
+    text-decoration: none; /* Ensure no underline for links */
+}
+
+.unique-nav-btn {
+    background-color: #AD1C71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 0 10px;
+}
+
+.unique-nav-btn:hover {
+    background-color: #364955;
+    transform: scale(1.1);
+}
+
+.unique-nav-btn:focus {
+    outline: none;
+}
+
+.unique-nav-buttons {
+    display: flex;
+    justify-content: center; /* Centers the buttons */
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* footer style */
+
+/* Footer Styles */
+footer {
+    background-color:#102B3C;
+    color: #fff;
+    font-family: Georgia, serif;
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 70px;
+}
+
+.footer-column {
+    background-color:#102B3C;
+}
+
+.footer-container {
+    background-color:#102B3C;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1180px;
+    margin: auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.heading {
+    font-size: 9px;
+}
+
+.footer-column {
+    background-color:#102B3C;
+    flex: 1 1 20%;
+    min-width: 200px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    height: 240px;
+}
+
+.footer-column h2 {
+    background-color:#102B3C;
+    font-size: 17px;
+    margin-bottom: 8px;
+    text-align: left;
+    padding-left: 0;
+    color: #AD1C71;
+    text-decoration: underline;
+}
+
+.footer-column ul {
+    background-color:#102B3C;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column li {
+    background-color:#102B3C;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.footer-column li a {
+    background-color:#102B3C;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column li a:hover {
+    color:  #AD1c71;
+}
+
+.footer-column img{
+  height: 20px;
+  width: 20px;
+}
+
+.footer-social-icons li i {
+    background-color:#102B3C;
+    font-size: 16px;
+    transition: transform 0.3s;
+}
+
+.footer-social-icons li i:hover {
+    transform: scale(1.2);
+}
+
+.footer-contact-info li {
+    background-color:#102B3C;
+    display: flex;
+    align-items: center;
+}
+
+.footer-contact-info li i {
+    background-color:#102B3C;
+    margin-right: 10px;
+}
+
+.footer-social-icons {
+    background-color:#102B3C;
+    display: flex;
+    margin-top: 10px;
+}
+
+.footer-social-icons li {
+    background-color:#102B3C;
+    margin-right: 10px;
+}
+
+.footer-social-icons a {
+    background-color:#102B3C;
+    color: #fff;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-social-icons a:hover {
+    color:  #AD1c71;
+}
+
+.subscribe {
+    background-color:#102B3C;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.subscribe input {
+    background-color:#102B3C;
+    padding: 8px 12px;
+    border: 1px solid white;
+    border-radius: 4px;
+    margin-right: 10px;
+    flex-grow: 1;
+    min-width: 60%;
+    border-color:  #AD1c71;
+}
+
+.subscribe button {
+    padding: 8px 16px;
+    background-color: #AD1c71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 20px;
+}
+
+.subscribe button:hover {
+    background-color: #7f1352;
+    color: #fff;
+}
+
+.footer-column p {
+    background-color:#102B3C;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 30px;
+    }
+
+    .subscribe {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .subscribe input {
+        padding: 8px 12px;
+        border: 1px solid white;
+        border-radius: 4px;
+        margin-right: 10px;
+        flex-grow: 1;
+        min-width: 60%;
+    }
+
+    .subscribe button {
+        padding: 8px 16px;
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+    }
+}
+/* intro section */
+
+           /* General Section Styling */
+           .content-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            /* margin: 50px 0; */
+            padding: 20px; 
+            opacity: 0; /* Start with sections hidden for animation */
+            transform: translateY(50px); /* Start slightly below */
+            transition: opacity 1s ease, transform 1s ease;
+            margin-top: -50px;
+        }
+
+        .content-section.reverse-layout {
+            flex-direction: row-reverse; /* Reverse the layout for alternating effect */
+        }
+
+        /* Text Content Styling */
+        .text-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .text-content h2 {
+            font-size: 24.5px;
+            color: white;
+            margin-bottom: 15px;
+            background-color: #AD1C71;
+            padding: 13px;
+        }
+
+        .text-content p,
+        .text-content ul {
+            font-size: 15px;
+            color: white;
+            line-height: 1.6;
+            background-color: #364955;
+            padding:10px;
+        }
+
+        .text-content ul li {
+            margin-bottom: 10px;
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        /* Image Content Styling */
+        .image-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .image-content img {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 15px;
+            height: 350px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-content img:hover {
+            transform: scale(1.05); /* Subtle zoom on hover */
+        }
+
+        /* Animation classes */
+        .animate-fadeInUp {
+            opacity: 1;
+            transform: translateY(0); /* Move to original position */
+        }
+
+
+
+               /* Grid Layout */
+        /* Web Services Carousel Container */
+        .web-services-carousel {
+            position: relative;
+            max-width: 100%;
+           
+            overflow: hidden;
+            margin: 50px auto;
+            background-color: #f4f4f4;
+            padding: 50px;
+            border-radius: 15px;
+            background-color:#102B3C;
+        }
+
+        /* Carousel Track */
+        .web-carousel-track-container {
+            overflow: hidden;
+        }
+
+        .web-carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        /* Web Service Card */
+        .web-service-card {
+            min-width: 300px;
+            margin-right: 20px;
+            /* background: #fff; */
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color:#364955;
+           
+        }
+
+        /* Card Hover Effect */
+        .web-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Icon Styling */
+        .web-service-icon {
+            font-size: 50px;
+            /* color: #007bff; */
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+            
+        }
+
+        /* Icon Hover Effect */
+        .web-service-card:hover .web-service-icon {
+            transform: rotate(20deg);
+        }
+
+        /* Title Styling */
+        .web-service-title {
+            font-size: 24px;
+            color: white;
+            margin-bottom: 10px;
+            /* background-color: #AD1C71; */
+        }
+
+        /* Description Styling */
+        .web-service-description {
+            font-size: 16px;
+            color:white;
+            line-height: 1.5;
+            /* background-color: #AD1C71; */
+        }
+
+        /* Carousel Buttons */
+        .web-carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color:#AD1C71;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            z-index: 9;
+        }
+
+        .web-carousel-button:hover {
+            background-color:#750d4a;
+        }
+
+        .web-carousel-button.left {
+            left: 10px;
+        }
+
+        .web-carousel-button.right {
+            right: 10px;
+        }
+
+
+
+
+
+          /* for project display */
+          .masonry-grid {
+            column-count: 3;
+            column-gap: 20px;
+            margin: 40px;
+        }
+        
+        .project-card {
+            break-inside: avoid;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 200px; /* Fixed height for all images */
+            object-fit: cover; /* Ensures images cover the area without distortion */
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .project-info {
+            position: absolute;
+            bottom: 0;
+            background: #AD1C71;
+            color: #fff;
+            width: 100%;
+            height: 70px;
+            padding: 10px; 
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 15px;
+        }
+        
+        .project-card:hover .project-info {
+            opacity: 1;
+        }
+        

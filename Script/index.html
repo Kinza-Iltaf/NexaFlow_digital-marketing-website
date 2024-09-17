@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexaFlow</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .background-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .background-wrapper img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Navigation and Logo Styling */
+        .nav-container {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #411B44; /* Logo and text color */
+            background:#102B3C; /* Slightly opaque background for readability */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for better separation */
+            z-index: 10; /* Ensure nav is above other content */
+            box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+
+       
+
+        .logo-container span {
+            font-size: 20px;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .logo-container .nexa {
+            color: #AD1C71; /* Pink color */
+        }
+
+        .logo-container .flow {
+            color: white; /* White color */
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 20px; /* Space between menu items */
+            flex-wrap: wrap; /* Allow items to wrap if necessary */
+            align-items: center; /* Vertically center items */
+        }
+
+        .nav-menu a {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #fffcff;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+            line-height: 1.5; /* Ensure proper line height */
+            padding: 10px 0; /* Add vertical padding */
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+
+        .nav-menu a:hover {
+            color: #AD1C71;
+            transform: scale(1.1);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .logo-container span {
+                font-size: 18px;
+            }
+
+            .nav-menu a {
+                font-size: 16px;
+                padding: 8px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .logo-container img {
+                margin-bottom: 5px;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .nav-menu a {
+                font-size: 14px;
+                padding: 6px 0;
+            }
+        }
+ /* Target the span elements for the line and dot effect */
+.logo-container span {
+    display: inline-block; /* Ensure the span is treated as a block for pseudo-element positioning */
+    position: relative; /* Required for positioning the ::after pseudo-element */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+}
+
+.logo-container span:hover {
+    transform: scale(1.3); /* Scale up the text when hovered */
+}
+
+/* Create a line and dot effect */
+.logo-container span::after {
+    content: ''; /* Empty content for the pseudo-element */
+    position: absolute;
+    left: 0; /* Align the line with the start of the text */
+    bottom: -5px; /* Position the line and dot below the text */
+    width: 100%; /* Line width equal to the text width */
+    height: 2px; /* Line thickness */
+    background: #AD1C71; /* Line color */
+}
+
+.logo-container span::before {
+    content: ''; /* Empty content for the dot */
+    position: absolute;
+    bottom: -8px; /* Position the dot slightly below the line */
+    right: 0; /* Align the dot with the end of the text */
+    width: 8px; /* Dot size */
+    height: 8px; /* Dot size */
+    border-radius: 50%; /* Make the dot circular */
+    background: #AD1C71; /* Dot color */
+}
+.logo-container span::start {
+    content: ''; /* Empty content for the dot */
+    position: absolute;
+    bottom: -8px; /* Position the dot slightly below the line */
+    right: 0; /* Align the dot with the end of the text */
+    width: 8px; /* Dot size */
+    height: 8px; /* Dot size */
+    border-radius: 50%; /* Make the dot circular */
+    background: #AD1C71; /* Dot color */
+}
+
+
+
+
+/* Profile Picture Styling */
+.profile-pic {
+    top: 100px;
+    left: 40px;
+    width: 370px; /* Slightly smaller than the circle to fit inside */
+    height: 370px; /* Slightly smaller than the circle to fit inside */
+    border-radius: 35%; /* Make the image circular */
+    object-fit: cover; /* Ensure the image covers the circle area */
+    position: absolute; /* Position the image within the container */
+}
+
+#contactus{
+    border: 2px solid #AD1C71;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+#intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    font-family: Arial, sans-serif;
+}
+
+#intro h4 {
+    color:white; /* Pink color */
+    margin-bottom: 10px;
+    font-size: 34px;
+    font-weight: bold;
+    /* align-items: center;
+    justify-content: center;
+    display: flex; */
+    
+}
+
+#intro p {
+    font-size: 14px;
+    line-height: 1.6;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 1px;
+}
+#intro h4 .nexa-pink {
+    color: #AD1C71; /* Pink color for "NexaFlow" */
+    font-style: italic;
+    text-decoration: underline;
+  
+}
+
+#login{
+    font-size: 20px;
+    color: white;
+    border: 3px solid  #AD1C71;
+    border-radius: 5px;
+    box-shadow: 10px;
+    padding: 5px;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #AD1C71;
+}
+#login:hover{
+    background-color: #c91b81;
+    transition: transform 1.1s ease-in-out;
+    transform: scale(1.1);
+}
+
+/* Popup Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #f9f5f5;
+    margin: 10% auto; /* Reduced margin from 15% to 10% to give more space at the top */
+    padding: 20px;
+    border: 2px solid #AD1C71;
+    width: 450px; /* Increased width slightly */
+    box-shadow: 0px 0px 10px 2px #AD1C71;
+    position: relative;
+    border-radius: 10px;
+}
+
+.close {
+    color: #AD1C71;
+    position: absolute;
+    right: 20px;
+    top: 10px; /* Adjusted top to ensure it has enough space */
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #411B44;
+}
+
+.modal-content h2 {
+    color: #AD1C71;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="password"],
+.modal-content input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #AD1C71;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 10px;
+    background-color: #AD1C71;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #9c1a66;
+}
+
+.modal-content a {
+    color: #AD1C71;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.modal-content a:hover {
+    text-decoration: underline;
+}
+
+
+/* Service Popup Styles */
+.service-popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 10%;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    background-color: rgba(58, 66, 72, 0.95);
+    color: white;
+    z-index: 1000;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transition: opacity 0.3s ease;
+}
+
+.service-item {
+    width: 30%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.service-item h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.service-item p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.service-popup .view-more {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #AD1C71;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.service-popup .view-more:hover 
+   {
+    color:#fff;
+    }
+
+/* Show popup only when hovering over the link or popup itself */
+#service-overview:hover + .service-popup,
+.service-popup:hover {
+    display: flex;
+}
+
+#service-popup {
+    display: none; /* Hide the popup initially */
+}
+
+
+    </style>
+
+</head>
+<body>
+
+    <!-- background image -->
+    <div class="background-wrapper">
+        <img src="/img/saf.jpg" alt="Background Image">
+    </div>
+
+    <!-- logo -->
+    <div class="nav-container">
+        <div class="logo-container">
+            <span class="nexa">Nexa</span><span class="flow">Flow</span>
+        </div>
+    
+        <div class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="#home" id="service-overview">Service Overview</a>
+            <a href="casestudy.html">Case Studies</a>
+            <a href="testimonial.html">Testimonials</a>
+            <a href="aboutus.html">About Us</a>
+            <a id="contactus" href="contactus.html">Contact Us</a>
+    
+            <div class="service-popup" id="service-popup">
+                <div class="service-item">
+                    <h2>Branding</h2>
+                    <p>We create strong brands that communicate your value and connect with your target audience.</p>
+                    <a href="branding.html" class="view-more">View More</a>
+                </div>
+                <div class="service-item">
+                    <h2>Website</h2>
+                    <p>Our website designs are visually stunning and highly functional, ensuring your online presence stands out.</p>
+                    <a href="website.html" class="view-more">View More</a>
+                </div>
+                <div class="service-item">
+                    <h2>Content</h2>
+                    <p>Content that engages, informs, and drives conversions. Let us help you tell your story effectively.</p>
+                    <a href="content.html" class="view-more">View More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+<!-- Intro and Picture -->
+<div class="circle-container">
+    <img src="/img/pro2.png" alt="Profile Picture" class="profile-pic">
+    <div id="intro">
+        <h4>Welcome to <br> <span class="nexa-pink">NexaFlow</span> Studios</h4>
+        <p>Your gateway to cutting-edge technology with style. Discover the perfect blend of innovation and elegance here.</p>
+        <a id="login" href="#loginModal">Login Now</a>
+    </div>
+</div>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal">
+    <div class="modal-content">
+        <h2>Login</h2>
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button type="button">Login</button>
+        <a href="#forgotPasswordModal" id="forgotPasswordLink">Forgot Password?</a>
+        <a href="#signupModal" id="signupLink">Don't have an account? Sign up</a>
+        <br><br>
+        <button type="button" id="backToMainPage">Back</button> <!-- Back button on login page -->
+    </div>
+</div>
+
+<!-- Forgot Password Modal -->
+<div id="forgotPasswordModal" class="modal">
+    <div class="modal-content">
+        <h2>Forgot Password</h2>
+        <input type="text" placeholder="Enter your email">
+        <button type="button">Submit</button>
+        <a href="#loginModal" id="backToLoginLink">Back to Login</a>
+    </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div id="signupModal" class="modal">
+    <div class="modal-content">
+        <h2>Sign Up</h2>
+        <input type="text" placeholder="Username">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button type="button">Sign Up</button>
+        <a href="#loginModal" id="backToLoginFromSignupLink">Back to Login</a>
+    </div>
+</div>
+
+<!-- Add your JavaScript code -->
+<script>
+  
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get the modal elements
+        const modals = {
+            login: document.getElementById("loginModal"),
+            forgotPassword: document.getElementById("forgotPasswordModal"),
+            signup: document.getElementById("signupModal")
+        };
+
+        // Get the buttons that open the modals
+        const btns = {
+            login: document.getElementById("login"),
+            forgotPassword: document.getElementById("forgotPasswordLink"),
+            signup: document.getElementById("signupLink"),
+            backToLoginFromForgot: document.getElementById("backToLoginLink"),
+            backToLoginFromSignup: document.getElementById("backToLoginFromSignupLink"),
+            backToMainPage: document.getElementById("backToMainPage"),
+            signupSubmit: document.querySelector("#signupModal button[type='button']"),
+            loginSubmit: document.querySelector("#loginModal button[type='button']"),
+            forgotPasswordSubmit: document.querySelector("#forgotPasswordModal button[type='button']"),
+            logout: document.getElementById('logout')
+        };
+
+        // Function to show a modal
+        function showModal(modalId) {
+            modals[modalId].style.display = "block";
+        }
+
+        // Function to hide a modal
+        function hideModal(modalId) {
+            modals[modalId].style.display = "none";
+        }
+
+        // Event listeners for opening modals
+        btns.login.onclick = function() {
+            showModal("login");
+        };
+
+        btns.forgotPassword.onclick = function() {
+            hideModal("login");
+            showModal("forgotPassword");
+        };
+
+        btns.signup.onclick = function() {
+            hideModal("login");
+            showModal("signup");
+        };
+
+        // Event listeners for navigation between modals
+        btns.backToLoginFromForgot.onclick = function() {
+            hideModal("forgotPassword");
+            showModal("login");
+        };
+
+        btns.backToLoginFromSignup.onclick = function() {
+            hideModal("signup");
+            showModal("login");
+        };
+
+        // Event listener for the Back button on the login page
+        btns.backToMainPage.onclick = function() {
+            hideModal("login");
+            // Optionally, redirect to the main page
+            // window.location.href = 'extra.html'; // Redirect to home page
+        };
+
+        // Sign up functionality
+        btns.signupSubmit.addEventListener('click', function() {
+            const username = document.querySelector("#signupModal input[placeholder='Username']").value;
+            const email = document.querySelector("#signupModal input[placeholder='Email']").value;
+            const password = document.querySelector("#signupModal input[placeholder='Password']").value;
+
+            const existingUsers = JSON.parse(localStorage.getItem('users')) || {};
+
+            if (existingUsers[username]) {
+                alert('Username already exists. Please choose a different username.');
+            } else {
+                existingUsers[username] = { email: email, password: password };
+                localStorage.setItem('users', JSON.stringify(existingUsers));
+
+                alert('Account created successfully!');
+                hideModal('signup');
+                showModal('login');
+            }
+        });
+
+        // Login functionality
+        btns.loginSubmit.addEventListener('click', function() {
+            const username = document.querySelector("#loginModal input[placeholder='Username']").value;
+            const password = document.querySelector("#loginModal input[placeholder='Password']").value;
+
+            const existingUsers = JSON.parse(localStorage.getItem('users')) || {};
+
+            if (existingUsers[username] && existingUsers[username].password === password) {
+                localStorage.setItem('loggedIn', 'true');
+                localStorage.setItem('username', username);
+
+                alert('Login successful!');
+                hideModal('login');
+                // Redirect to the protected page or dashboard
+                window.location.href = 'aboutfffd.html'; // Redirect to dashboard
+            } else {
+                alert('Invalid username or password.');
+            }
+        });
+
+        // Forgot Password functionality
+        btns.forgotPasswordSubmit.addEventListener('click', function() {
+            const email = document.querySelector("#forgotPasswordModal input[placeholder='Enter your email']").value;
+
+            const existingUsers = JSON.parse(localStorage.getItem('users')) || {};
+            const userExists = Object.values(existingUsers).some(user => user.email === email);
+
+            if (userExists) {
+                alert('Password reset instructions have been sent to your email.');
+                hideModal('forgotPassword');
+                showModal('login');
+            } else {
+                alert('Email not found. Please check and try again.');
+            }
+        });
+
+        // Check if the user is logged in and handle it on page load
+        window.addEventListener('load', function() {
+            const isLoggedIn = localStorage.getItem('loggedIn') === 'true';
+            console.log('User logged in:', isLoggedIn); // Debugging: Check login status
+    
+            // Get the current page URL
+            const currentPage = window.location.pathname;
+            console.log('Current page:', currentPage); // Debugging: Check current page path
+    
+            // List of pages that require login
+            const restrictedPages = [
+                '/aboutfffd.html',
+                '/savereview.html',
+                '/branding.html',
+                '/testimonial.html',
+                '/content.html',
+                '/website.html',
+                '/userreview.html'
+            ];
+    
+            // Redirect to login page if user is not logged in and trying to access a restricted page
+            if (!isLoggedIn && restrictedPages.includes(currentPage)) {
+                console.log('Redirecting to login page'); // Debugging: Log redirection
+                window.location.href = 'extra.html'; // Redirect to login page
+            } else if (isLoggedIn && currentPage === '/extra.html') {
+                // Redirect to dashboard if already logged in and trying to access login page
+                console.log('Redirecting to dashboard'); // Debugging: Log redirection
+                window.location.href = 'aboutfffd.html'; // Redirect to dashboard
+            }
+        });
+
+        // Logout functionality
+        btns.logout.addEventListener('click', function() {
+            localStorage.removeItem('loggedIn');
+            localStorage.removeItem('username');
+            alert('You have been logged out.');
+            // Redirect to login page
+            window.location.href = 'index.html'; // Redirect to login page
+        });
+    });
+
+
+
+
+     // for service popup
+
+
+  // Get the elements
+  document.addEventListener('DOMContentLoaded', () => {
+    // Get the elements
+    const serviceLink = document.getElementById('service-overview');
+    const servicePopup = document.getElementById('service-popup');
+
+    // Show popup on hover over the link
+    serviceLink.addEventListener('mouseover', () => {
+        servicePopup.style.display = 'flex';
+    });
+
+    // Hide popup when mouse leaves the popup area
+    servicePopup.addEventListener('mouseleave', () => {
+        servicePopup.style.display = 'none';
+    });
+
+    serviceLink.addEventListener('mouseleave', () => {
+        // Ensure popup hides when leaving the link if not hovering over the popup
+        setTimeout(() => {
+            if (!servicePopup.matches(':hover')) {
+                servicePopup.style.display = 'none';
+            }
+        }, 100);
+    });
+});
+
+</script>
+<script src="script.js"></script>
+
+
+
+</body>
+</html>

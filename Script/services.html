@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Services</title>
+  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Grid Layout */
+        /* Carousel Container */
+        .webdev-services-carousel {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin: 50px auto;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        /* Carousel Track */
+        .webdev-carousel-track-container {
+            overflow: hidden;
+        }
+
+        .webdev-carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        /* Service Card */
+        .webdev-service-card {
+            min-width: 300px;
+            margin-right: 20px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Card Hover Effect */
+        .webdev-service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Icon Styling */
+        .webdev-service-icon {
+            font-size: 50px;
+            color: #007bff;
+            margin-bottom: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        /* Icon Hover Effect */
+        .webdev-service-card:hover .webdev-service-icon {
+            transform: rotate(20deg);
+        }
+
+        /* Title Styling */
+        .webdev-service-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Description Styling */
+        .webdev-service-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Carousel Buttons */
+        .webdev-carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+            z-index: 9;
+        }
+
+        .webdev-carousel-button:hover {
+            background-color: #0056b3;
+        }
+
+        .webdev-carousel-button.left {
+            left: 10px;
+        }
+
+        .webdev-carousel-button.right {
+            right: 10px;
+        }
+
+
+        /* for project display */
+        .masonry-grid {
+    column-count: 3;
+    column-gap: 20px;
+}
+
+.project-card {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    width: 100%;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-info {
+    opacity: 1;
+}
+
+/* method 2 */
+
+/* .carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: 50px auto;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.project-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 20px;
+}
+
+.project-slide img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+
+/* method 3 */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .portfolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .portfolio-item img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-item:hover img {
+    transform: scale(1.05);
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .portfolio-item:hover .overlay {
+    opacity: 1;
+  }
+
+  .overlay h3 {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .overlay p {
+    margin: 5px 0;
+    font-size: 18px;
+  }
+
+  .overlay .view-project {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .overlay .view-project:hover {
+    background-color: #0056b3;
+  } 
+
+  /* method four */
+
+  /* body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.parallax-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('background.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.parallax-content {
+    z-index: 2;
+}
+
+.projects {
+    padding: 50px 10%;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.project-card {
+    display: inline-block;
+    width: 30%;
+    margin: 15px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+}
+
+.project-card h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 15px;
+}
+
+.project-card p {
+    font-size: 16px;
+    color: #666;
+    margin: 0 15px 15px;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+} */ 
+
+
+
+
+    </style>
+</head>
+<body>
+
+<section class="webdev-services-carousel">
+    <button class="webdev-carousel-button left">&#8249;</button>
+    <div class="webdev-carousel-track-container">
+        <div class="webdev-carousel-track">
+            <!-- Services will be added dynamically here -->
+            <div class="webdev-service-card">
+                <div class="webdev-service-icon">🎨</div>
+                <h3 class="webdev-service-title">Website Design</h3>
+                <p class="webdev-service-description">Design your website with a strategic approach to capture your brand and your audience.</p>
+            </div>
+            <div class="webdev-service-card">
+                <div class="webdev-service-icon">💻</div>
+                <h3 class="webdev-service-title">Website Development</h3>
+                <p class="webdev-service-description">Build a strong online presence with a website that is fast, secure, and easy to navigate.</p>
+            </div>
+            <div class="webdev-service-card">
+                <div class="webdev-service-icon">🔧</div>
+                <h3 class="webdev-service-title">WordPress</h3>
+                <p class="webdev-service-description">Maintain and update your website effortlessly with a flexible, user-friendly CMS solution.</p>
+            </div>
+            <div class="webdev-service-card">
+                <div class="webdev-service-icon">🌐</div>
+                <h3 class="webdev-service-title">Website Hosting</h3>
+                <p class="webdev-service-description">Ensure your website is always up and running with reliable and secure website hosting.</p>
+            </div>
+            <div class="webdev-service-card">
+                <div class="webdev-service-icon">✍️</div>
+                <h3 class="webdev-service-title">Website Copy</h3>
+                <p class="webdev-service-description">Compel and convert your audience with website copy that speaks to their needs and drives action.</p>
+            </div>
+            <div class="webdev-service-card">
+                <div class="webdev-service-icon">🚀</div>
+                <h3 class="webdev-service-title">Website Optimisation</h3>
+                <p class="webdev-service-description">Identify areas of improvement and implement strategies that drive measurable results.</p>
+            </div>
+        </div>
+    </div>
+    <button class="webdev-carousel-button right">&#8250;</button>
+</section>
+
+<section class="portfolio-section">
+    <h2 style="text-align: center; font-size: 32px; color: #333;">Our Projects</h2>
+    <p style="text-align: center; font-size: 18px; color: #555; margin-top: 10px;">Discover the work we've done for our clients, turning their ideas into reality.</p>
+    <div class="masonry-grid">
+        <div class="project-card">
+            <img src="/img/mainbranding.jpg" alt="Project 1">
+            <div class="project-info">
+                <h3>Project Title 1</h3>
+                <p>Brief description of the project.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="/img/mainbranding.jpg" alt="Project 1">
+            <div class="project-info">
+                <h3>Project Title 1</h3>
+                <p>Brief description of the project.</p>
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <img src="/img/mainbranding.jpg" alt="Project 1">
+            <div class="project-info">
+                <h3>Project Title 1</h3>
+                <p>Brief description of the project.</p>
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <img src="/img/mainbranding.jpg" alt="Project 1">
+            <div class="project-info">
+                <h3>Project Title 1</h3>
+                <p>Brief description of the project.</p>
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <img src="/img/mainbranding.jpg" alt="Project 1">
+            <div class="project-info">
+                <h3>Project Title 1</h3>
+                <p>Brief description of the project.</p>
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <img src="/img/mainbranding.jpg" alt="Project 1">
+            <div class="project-info">
+                <h3>Project Title 1</h3>
+                <p>Brief description of the project.</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="/img/mainbranding.jpg" alt="Project 1">
+            <div class="project-info">
+                <h3>Project Title 1</h3>
+                <p>Brief description of the project.</p>
+            </div>
+        </div>
+
+
+        <div class="project-card">
+            <img src="/img/mainbranding.jpg" alt="Project 1">
+            <div class="project-info">
+                <h3>Project Title 1</h3>
+                <p>Brief description of the project.</p>
+            </div>
+        </div>
+
+
+        <!-- Repeat for other projects -->
+    </div>
+</section>
+
+
+<section class="project-carousel">
+    <h2 style="text-align: center; font-size: 32px; color: #333;">Our Work</h2>
+    <p style="text-align: center; font-size: 18px; color: #555; margin-top: 10px;">Take a look at the projects we’ve successfully delivered for our clients.</p>
+    <div class="carousel-container">
+        <button class="carousel-button prev">&#8249;</button>
+        <div class="carousel-track-container">
+            <div class="carousel-track">
+                <div class="project-slide">
+                    <img src="/img/mainbranding.jpg" alt="Project 1">
+                    <div class="project-details">
+                        <h3>Project Title 1</h3>
+                        <p>Detailed description of the project.</p>
+                    </div>
+                </div>
+
+
+                <div class="project-slide">
+                    <img src="/img/mainbranding.jpg" alt="Project 1">
+                    <div class="project-details">
+                        <h3>Project Title 1</h3>
+                        <p>Detailed description of the project.</p>
+                    </div>
+                </div>
+
+
+                <div class="project-slide">
+                    <img src="/img/mainbranding.jpg" alt="Project 1">
+                    <div class="project-details">
+                        <h3>Project Title 1</h3>
+                        <p>Detailed description of the project.</p>
+                    </div>
+                </div>
+
+
+                <div class="project-slide">
+                    <img src="/img/mainbranding.jpg" alt="Project 1">
+                    <div class="project-details">
+                        <h3>Project Title 1</h3>
+                        <p>Detailed description of the project.</p>
+                    </div>
+                </div>
+
+
+                <div class="project-slide">
+                    <img src="/img/mainbranding.jpg" alt="Project 1">
+                    <div class="project-details">
+                        <h3>Project Title 1</h3>
+                        <p>Detailed description of the project.</p>
+                    </div>
+                </div>
+
+
+                <div class="project-slide">
+                    <img src="/img/mainbranding.jpg" alt="Project 1">
+                    <div class="project-details">
+                        <h3>Project Title 1</h3>
+                        <p>Detailed description of the project.</p>
+                    </div>
+                </div>
+
+
+                <div class="project-slide">
+                    <img src="/img/mainbranding.jpg" alt="Project 1">
+                    <div class="project-details">
+                        <h3>Project Title 1</h3>
+                        <p>Detailed description of the project.</p>
+                    </div>
+                </div>
+
+
+                <div class="project-slide">
+                    <img src="/img/mainbranding.jpg" alt="Project 1">
+                    <div class="project-details">
+                        <h3>Project Title 1</h3>
+                        <p>Detailed description of the project.</p>
+                    </div>
+                </div>
+                <!-- Repeat for other projects -->
+            </div>
+        </div>
+        <button class="carousel-button next">&#8250;</button>
+    </div>
+</section>
+<!-- method 3 -->
+
+<section id="portfolio" style="padding: 50px 0;">
+    <h2 style="text-align: center; font-size: 32px; color: #333; margin-bottom: 20px;">Our Portfolio</h2>
+    <p style="text-align: center; font-size: 18px; color: #555; margin-bottom: 50px;">A showcase of the projects we've successfully delivered to our clients.</p>
+    <div class="portfolio-grid">
+      <div class="portfolio-item">
+        <img src="/img/mainbranding.jpg" alt="Project 1">
+        <div class="overlay">
+          <h3>Project Title</h3>
+          <p>Client Name</p>
+          <a href="#" class="view-project">View Project</a>
+        </div>
+      </div>
+      <!-- Repeat for more projects -->
+    </div>
+  </section>
+
+  <!-- method 4 -->
+  <section class="parallax-section">
+    <div class="parallax-content">
+        <h1>Our Amazing Projects</h1>
+        <p>Explore some of the projects we've worked on, featuring innovative designs and cutting-edge technology.</p>
+    </div>
+</section>
+
+<section class="projects">
+    <div class="project-card">
+        <img src="/img/build your own brand.jpg" alt="Project 1">
+        <h2>Project Name 1</h2>
+        <p>Short description of the project.</p>
+    </div>
+    <div class="project-card">
+        <img src="/img/deliverresult.jpg" alt="Project 2">
+        <h2>Project Name 2</h2>
+        <p>Short description of the project.</p>
+    </div>
+    <div class="project-card">
+        <img src="/img/mainfinalbranding.jpg" alt="Project 3">
+        <h2>Project Name 3</h2>
+        <p>Short description of the project.</p>
+    </div>
+    <!-- Add more project cards as needed -->
+</section>
+
+
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const track = document.querySelector('.webdev-carousel-track');
+        const leftButton = document.querySelector('.webdev-carousel-button.left');
+        const rightButton = document.querySelector('.webdev-carousel-button.right');
+        const cards = document.querySelectorAll('.webdev-service-card');
+        
+        let currentSlide = 0;
+        const slideWidth = cards[0].getBoundingClientRect().width;
+
+        // Arrange the cards next to one another
+        cards.forEach((card, index) => {
+            card.style.left = slideWidth * index + 'px';
+        });
+
+        // Move to the next slide
+        rightButton.addEventListener('click', () => {
+            if (currentSlide < cards.length - 1) {
+                currentSlide++;
+            } else {
+                currentSlide = 0; // Loop back to the start
+            }
+            track.style.transform = 'translateX(-' + slideWidth * currentSlide + 'px)';
+        });
+
+        // Move to the previous slide
+        leftButton.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+            } else {
+                currentSlide = cards.length - 1; // Loop back to the end
+            }
+            track.style.transform = 'translateX(-' + slideWidth * currentSlide + 'px)';
+        });
+    });
+</script>
+
+</body>
+</html>
