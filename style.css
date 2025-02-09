@@ -227,7 +227,7 @@ display: none; /* Hide the popup initially */
 #branding-intro {
 position: relative;
 width: 100%;
-background-image: url(/img/mainfinalbranding.jpg); 
+background-image: url(img/mainfinalbranding.jpg); 
 /* Add your background image */
 /* background-color: #AD1C71; */
 background-size: cover;
